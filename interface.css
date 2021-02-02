@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+/* -@collapse */
+
+.yt_photo_magnifier.dialog[open]
+{
+    width: 80vmin;
+    height: 80vmin;
+
+    font-size: 2.5vmin;
+
+    color: #dadada;
+    background-color: #3e0942;
+
+    display: block;
+
+    border: none;
+    border-radius: 20px;
+
+    z-index: 9999;
+
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.yt_photo_magnifier.dialog.open
+{
+    animation: play_dialog_open 0.5s ease-in-out forwards;
+}
+
+.yt_photo_magnifier.dialog.close
+{
+    animation: play_dialog_close 0.75s ease-in-out forwards;
+}
+
+@keyframes play_dialog_open
+{
+    from
+    {
+        width: 0;
+        opacity: 0;
+        font-size: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes play_dialog_close
+{
+    75%
+    {
+        opacity: 1;
+    }
+    to
+    {
+        width: 0;
+        opacity: 0;
+        font-size: 0;
+    }
+}
+
+.yt_photo_magnifier.dialog #button_close_dialog
+{
+    color: white;
+    background-color: black;
+    
+    border: none;
+    outline: none;
+
+    border-radius: 20px 20px 20px 5px;
+    
+    font-size: 5vmin;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.yt_photo_magnifier.dialog main
+{
+    width: inherit;
+    height: inherit;
+    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: space-evenly;
+    
+    position: relative;
+}
+
+.yt_photo_magnifier.dialog label
+{
+    display: block;
+    position: relative;
+}
+
+.yt_photo_magnifier.dialog input
+{
+    width: 100%;
+    
+    box-sizing: border-box;
+    
+    caret-color: transparent;
+
+    text-align: center;
+    vertical-align: middle;
+    
+    border: 0;
+    outline: 0;
+}
+
+/* #region 'Input Cancel Key' */
+
+.yt_photo_magnifier.dialog [for = input_cancel_key]
+{
+    overflow: hidden;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.yt_photo_magnifier.dialog #input_cancel_key:focus
+{
+    outline: 1.5px solid blue ;
+}
+
+/* #endregion */
+
+/* #region 'Input Quality' */
+
+.yt_photo_magnifier.dialog #input_quality_box::before
+{
+    content: "160p";
+    
+    display: block;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateX(-25%);
+}
+
+.yt_photo_magnifier.dialog #input_quality_box::after
+{
+    content: "720p";
+
+    display: block;
+    
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translateX(50%);
+}
+
+/* #endregion */
+
+/* #region 'Input Size' */
+
+.yt_photo_magnifier.dialog #input_size_box::before
+{
+    content: "25";
+    
+    display: block;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateX(-25%);
+}
+
+.yt_photo_magnifier.dialog #input_size_box::after
+{
+    content: "80";
+
+    display: block;
+    
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translateX(50%);
+}
+
+/* #endregion */

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="interface.css">
+    <script src="interface.js" type="module"></script>
+</head>
+<body>
+    <dialog class="yt_photo_magnifier dialog">
+        <header>
+            <button id="button_close_dialog">x</button>
+        </header>
+        <main>
+            <label for="input_cancel_key">
+                <span>Cancel On:</span>
+                <span id="input_cancel_key_box">
+                    <input type="text" id="input_cancel_key" placeholder="Press Any Key" maxlength="1" name="yt_avatar_cancel_key">
+                    <input type="button" id="input_clear_cancel_key" value="Clear">
+                </span>
+            </label>
+
+            <label for="input_quality">
+                <span>Quality:</span>
+                <span id="input_quality_box"><input type="range" id="input_quality" min="1" max="4" value="4" name="yt_avatar_max_quality"></span>
+            </label>
+            
+            <label for="input_size">
+                <span>Size:</span>
+                <span id="input_size_box"><input type="range" id="input_size" min="25" max="80" value="60" name="yt_avatar_max_size_per_cent"></span>
+            </label>
+        </main>
+    </dialog>
+</body>
+</html>
